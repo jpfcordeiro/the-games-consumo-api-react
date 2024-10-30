@@ -4,43 +4,43 @@ export const CreateContentComp = () => {
   return (
     <>
       <div className={styles.createContent}>
-        <div className={styles.title}>
+        <div className="title">
           <h2>Cadastrar novo jogo</h2>
         </div>
-        <form id="createForm" className={styles.formPrimary}>
+        <form id="createForm" className="formPrimary">
           <input
             type="text"
             name="title"
             id="title"
             placeholder="Insira o título do jogo"
-            className={styles.inputPrimary}
+            className="inputPrimary"
           />
           <input
             type="text"
             name="platform"
-            id="platform"
+            id={styles.platform}
             placeholder="Insira a plataforma do jogo"
-            className={styles.inputPrimary}
+            className="inputPrimary"
           />
           <input
             type="number"
             name="year"
             id="year"
             placeholder="Insira o ano do jogo"
-            className={styles.inputPrimary}
+            className="inputPrimary"
           />
           <input
             type="number"
             name="price"
             id="price"
             placeholder="Insira o preço do jogo"
-            className={styles.inputPrimary}
+            className="inputPrimary"
           />
           <input
             type="submit"
             value="Cadastrar"
             id="createBtn"
-            className={styles.btnPrimary}
+            className="btnPrimary"
           />
         </form>
       </div>

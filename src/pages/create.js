@@ -2,7 +2,7 @@ import Head from "next/head";
 import Container from "@/components/Container";
 import { MenuComponent } from "@/components/Menu";
 import Footer from "@/components/Footer";
-import { HomeComponent } from "@/components/HomeContent";
+import { CreateContentComp } from "@/components/CreateContent";
 
 export default function HomePage(){
   return (
@@ -19,7 +19,7 @@ export default function HomePage(){
       <main>
         <MenuComponent/>
         <Container>
-            <HomeComponent/>
+            <CreateContentComp/>
         </Container>
       </main>
       <Footer/>

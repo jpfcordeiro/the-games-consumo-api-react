@@ -1,23 +1,5 @@
-.loading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    min-height: 50vh;
-    color: var(--secondary-color);
-    font-family: "Poppins";
-    font-size: 1rem;
-  }
-  
-  .loading img {
-    width: 3.5rem;
-  }
-  
-  .done {
-    display: none;
-  }
+import styles from "@/components/HomeContent/HomeContent.module.css";
+import { LoadingComponent } from "../Loading";
 
 export const HomeComponent = () => {
   return (
@@ -27,7 +9,7 @@ export const HomeComponent = () => {
           <div className={styles.title}>
             <h2>Lista de jogos</h2>
           </div>
-          <Loading />
+          <LoadingComponent />
           <div className={styles.games} id="games"></div>
         </div>
       </div>

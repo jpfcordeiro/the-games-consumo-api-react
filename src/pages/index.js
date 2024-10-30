@@ -14,7 +14,6 @@ export default function Home() {
       </Head>
       <main>
         <Container>
-          {/* <h1 style={{color: 'white'}}>Conteúdo do login</h1> */}
           <LoginContent />
         </Container>
       </main>
