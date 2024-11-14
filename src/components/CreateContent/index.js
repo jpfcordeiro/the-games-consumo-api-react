@@ -75,4 +75,4 @@ const CreateContentComp = () => {
     </>
   );
 };
-export default CreateGame;
+export default CreateContentComp;
