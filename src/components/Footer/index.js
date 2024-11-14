@@ -1,6 +1,6 @@
 import styles from "@/components/Footer/Footer.module.css"
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <>
       <footer>
@@ -24,4 +24,3 @@ const Footer = () => {
     </>
   );
 };
-export default Footer;

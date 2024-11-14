@@ -1,25 +1,24 @@
 import { useState, useEffect } from "react";
 import styles from "@/components/HomeContent/HomeContent.module.css";
-import Loading from "../Loading";
+import LoadingComp from "../Loading";
 
-const HomeContent = () => {
+export const HomeContentComp = () => {
   const [loading, setLoading] = useState(true);
   const [games, setGames] = useState([]);
 
-  // Função para buscar jogos da API
   useEffect(() => {
     const fetchGames = async () => {
       try {
-        const response = await fetch("http://localhost:4000/api/games"); 
-                if (!response.ok) {
+        const response = await fetch("http://localhost:4000/games");
+        if (!response.ok) {
           throw new Error("Falha ao carregar jogos");
         }
         const data = await response.json();
-        setGames(data)
+        setGames(data);
       } catch (error) {
         console.error(error);
       } finally {
-        setLoading(false); 
+        setLoading(false);
       }
     };
     fetchGames();
@@ -49,24 +48,29 @@ const HomeContent = () => {
           <h2>Lista de jogos</h2>
         </div>
 
-        {/* Componente de loading */}
-        <Loading loading={loading} />
+        {loading && <LoadingComp loading={loading} />}
 
         <div className={styles.games}>
           <ul className={styles.listGames}>
-            {/* Exibindo os jogos */}
+            {games.length === 0 && !loading && <p>Não há jogos para exibir.</p>}
+
             {games.map((game) => (
               <li key={game.id} className={styles.gameItem}>
                 <div className={styles.gameImg}>
-                  <img src="images/game_cd_cover.png" alt={game.name} />
+                  <img
+                    src={game.coverUrl || "/images/game_cd_cover.png"} 
+                    alt={game.name}
+                  />
                 </div>
                 <div className={styles.gameInfo}>
                   <h3>Título: {game.name}</h3>
                   <p>Plataforma: {game.platform}</p>
                   <p>Ano: {game.releaseYear}</p>
                   <p>Preço: {game.price}</p>
-                  {/* Botão de deletar */}
-                  <button onClick={() => handleDeleteGame(game.id)} className={styles.deleteButton}>
+                  <button
+                    onClick={() => handleDeleteGame(game.id)}
+                    className={styles.deleteButton}
+                  >
                     Deletar
                   </button>
                 </div>
@@ -78,5 +82,3 @@ const HomeContent = () => {
     </div>
   );
 };
-
-export default HomeContent;

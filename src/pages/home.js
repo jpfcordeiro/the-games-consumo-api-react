@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Container from "@/components/Container";
 import { MenuComponent } from "@/components/Menu";
-import Footer from "@/components/Footer";
-import { HomeComponent } from "@/components/HomeContent";
+import { Footer } from "@/components/Footer";
+import { HomeContentComp } from "@/components/HomeContent";
 
 export default function HomePage(){
   return (
@@ -19,7 +19,7 @@ export default function HomePage(){
       <main>
         <MenuComponent/>
         <Container>
-            <HomeComponent/>
+          <HomeContentComp/>
         </Container>
       </main>
       <Footer/>

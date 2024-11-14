@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-const CreateContentComp = () => {
+export const CreateContentComp = () => {
   const [title, setTitle] = useState("");
   const [platform, setPlatform] = useState("");
   const [year, setYear] = useState("");
@@ -75,4 +75,4 @@ const CreateContentComp = () => {
     </>
   );
 };
-export default CreateContentComp;
+

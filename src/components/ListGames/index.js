@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Loading from "../Loading";
 
-const ListGames = () => {
+export const ListGames = () => {
   // Estado que irá conter a lista de jogos
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -72,4 +72,3 @@ const ListGames = () => {
     </>
   );
 };
-export default ListGames;

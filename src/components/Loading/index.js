@@ -1,13 +1,15 @@
 import styles from "@/components/Loading/Loading.module.css";
 
-const Loading = ({ loading }) => {
+export const LoadingComp = ({ loading }) => {
   return (
-    <>
-      <div className={loading ? styles.loading : styles.done}>
-        <p>Carregando...</p>
-      </div>
-    </>
+    <div
+      className={loading ? styles.loading : styles.done}
+    >
+      {loading ? (
+        <p>Carregando...</p>  
+      ) : (
+        <p>Conteúdo carregado</p> 
+      )}
+    </div>
   );
 };
-
-export default Loading;
