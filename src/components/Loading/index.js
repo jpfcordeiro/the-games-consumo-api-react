@@ -1,10 +1,13 @@
 import styles from "@/components/Loading/Loading.module.css";
 
-export const LoadingComponent = () => {
+const Loading = ({ loading }) => {
   return (
-    <div className={styles.loading}>
-      <img src="images/loading.gif" alt="Carregando" />
-      <p>Carregando...</p>
-    </div>
+    <>
+      <div className={loading ? styles.loading : styles.done}>
+        <p>Carregando...</p>
+      </div>
+    </>
   );
 };
+
+export default Loading;
